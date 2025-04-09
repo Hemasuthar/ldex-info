@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .info-icon {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #007BFF;
+      padding: 4px;
+    }
+
+    .info-icon:hover {
+      color: orange;
+    }
+
+    .content {
+      padding: 10px 18px;
+      max-height: 0;
+      font-size: 13px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      transition: max-height 0.3s ease-out;
+      background-color: #f1f1f1;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 6px;
+      margin-top: 6px;
+    }
+
+    .info-container {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .info-label {
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="info-container">
+  <button class="info-icon" id="toggleInfo" title="More Info">&#9432;</button>
+  <span class="info-label"><strong>Patient’s L-Dex Settings</strong></span>
+</div>
+
+<div class="content" id="infoContent">
+  <p>Patient’s L-Dex Settings shows the distribution of arm and leg L-Dex patients, categorized into unilateral and bilateral limb settings.</p>
+</div>
+
+<script>
+  const icon = document.getElementById("toggleInfo");
+  const content = document.getElementById("infoContent");
+
+  icon.addEventListener("click", function () {
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+</script>
+
+</body>
+</html>
